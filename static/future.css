@@ -1,0 +1,318 @@
+/* ---------- Mod gecisi: hangi metin hangi modda gorunur ---------- */
+body:not(.future) .f { display: none !important; }
+body.future .r { display: none !important; }
+
+/* ---------- Ust bar + Modernlestir butonu (iki modda da gorunur) ---------- */
+.topbar { text-align: right; max-width: 900px; margin: 0 auto 6px; }
+.mode-btn { cursor: pointer; }
+
+/* Retro gorunum */
+body:not(.future) .mode-btn {
+  font-family: "Comic Sans MS", cursive;
+  font-size: 14px;
+  font-weight: bold;
+  background: #C0C0C0;
+  color: #FF0000;
+  border: 3px outset #FFFFFF;
+  padding: 4px 14px;
+  animation: retro-flash 1s steps(2, start) infinite;
+}
+body:not(.future) .mode-btn:active { border-style: inset; }
+/* Gorunmez olmadan renk degistirir, boylece her zaman tiklanabilir */
+@keyframes retro-flash { to { color: #0000FF; background: #FFFF00; } }
+
+/* ================================================================
+   2030 TEMASI
+   ================================================================ */
+body.future {
+  --bg: #07070f;
+  --panel: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #e8eaf6;
+  --muted: #8b90b0;
+  --accent: #7c5cff;
+  --accent2: #00e5ff;
+  --glow: 0 0 24px rgba(124, 92, 255, 0.45);
+
+  background: var(--bg);
+  background-image:
+    radial-gradient(900px 500px at 15% -10%, rgba(124, 92, 255, 0.28), transparent 60%),
+    radial-gradient(800px 500px at 100% 10%, rgba(0, 229, 255, 0.18), transparent 60%),
+    radial-gradient(700px 500px at 50% 120%, rgba(255, 64, 160, 0.14), transparent 60%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: "Inter", "SF Pro Display", -apple-system, "Segoe UI", system-ui, sans-serif;
+  font-size: 15px;
+  margin: 0;
+  padding: 16px 16px 32px;
+  min-height: 100vh;
+}
+
+body.future a { color: var(--accent2); text-decoration: none; }
+body.future a:visited { color: var(--accent2); }
+body.future a:hover { color: #fff; background: none; }
+
+/* Buton */
+body.future .mode-btn {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 18px;
+  backdrop-filter: blur(12px);
+  animation: none;
+  transition: all .2s ease;
+}
+body.future .mode-btn:hover { border-color: var(--accent); box-shadow: var(--glow); }
+
+/* Baslik */
+body.future .header { margin: 10px 0 18px; }
+body.future h1.rainbow {
+  font-family: inherit;
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  margin: 8px 0 4px;
+  background: linear-gradient(90deg, var(--accent2), var(--accent), #ff40a0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: none;
+  filter: drop-shadow(0 0 18px rgba(124, 92, 255, 0.45));
+}
+body.future .tagline { color: var(--muted); margin: 0; letter-spacing: 0.08em; }
+
+/* Duzen: tabloyu modern bir grid'e cevir */
+body.future table.layout,
+body.future table.layout > tbody { display: block; }
+body.future table.layout {
+  background: none;
+  border: 0;
+  max-width: 980px;
+  margin: 0 auto;
+}
+body.future table.layout > tbody > tr {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 18px;
+}
+
+/* Cam efektli paneller */
+body.future td.menu,
+body.future td.main {
+  display: block;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  padding: 22px;
+  font-family: inherit;
+  width: auto;
+}
+
+body.future td.menu { color: var(--text); }
+body.future td.menu b {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: -6px;
+}
+body.future td.menu br { display: none; }
+body.future td.menu a {
+  display: block;
+  padding: 10px 12px;
+  margin: 4px 0;
+  border-radius: 12px;
+  color: var(--text);
+  transition: all .2s ease;
+}
+body.future td.menu a:hover { background: rgba(124, 92, 255, 0.18); color: #fff; }
+
+body.future .counter-box { font-size: 12px; color: var(--muted); text-align: left; margin-top: 18px; }
+body.future .counter {
+  display: block;
+  background: transparent;
+  color: var(--accent2);
+  font-family: "SF Mono", "JetBrains Mono", ui-monospace, monospace;
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  border: 0;
+  padding: 2px 0;
+  margin: 2px 0;
+}
+body.future .status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+}
+body.future .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #2cff9a;
+  box-shadow: 0 0 10px #2cff9a;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 50% { opacity: .35; } }
+
+body.future td.main h2 {
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+body.future td.main p { color: var(--muted); line-height: 1.55; margin: 0 0 14px; }
+body.future td.main p b { color: var(--text); }
+
+/* Sohbet kutusu */
+body.future .chatbox {
+  height: 360px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body.future .chatbox .line {
+  max-width: 82%;
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 16px;
+  line-height: 1.5;
+}
+body.future .chatbox .you {
+  align-self: flex-end;
+  background: linear-gradient(135deg, var(--accent), #5b3df0);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+body.future .chatbox .bot {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 4px;
+}
+body.future .chatbox .err {
+  align-self: center;
+  background: rgba(255, 70, 90, 0.15);
+  border: 1px solid rgba(255, 70, 90, 0.4);
+  color: #ff8a98;
+}
+body.future .chatbox::-webkit-scrollbar { width: 8px; }
+body.future .chatbox::-webkit-scrollbar-thumb { background: rgba(255,255,255,.18); border-radius: 8px; }
+
+/* Form */
+body.future .chatform { display: flex; gap: 10px; margin-top: 14px; align-items: center; }
+body.future .chatform input[type=text] {
+  flex: 1;
+  width: auto;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 16px;
+  outline: none;
+  transition: all .2s ease;
+}
+body.future .chatform input[type=text]::placeholder { color: var(--muted); }
+body.future .chatform input[type=text]:focus { border-color: var(--accent); box-shadow: var(--glow); }
+
+body.future .chatform input[type=submit] {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: 0;
+  border-radius: 14px;
+  padding: 12px 22px;
+  transition: all .2s ease;
+}
+body.future .chatform input[type=submit]:hover { box-shadow: var(--glow); transform: translateY(-1px); }
+body.future .chatform input[type=button] {
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 16px;
+}
+body.future .chatform input[type=button]:hover { color: var(--text); border-color: var(--accent); }
+body.future .chatform input:disabled { opacity: .55; }
+
+body.future .status {
+  font-family: "SF Mono", ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 12px 0 0;
+}
+
+body.future .footer { margin-top: 28px; color: var(--muted); }
+
+/* Gecis animasyonu */
+body, td.menu, td.main, .chatbox { transition: background-color .4s ease, color .4s ease; }
+
+@media (max-width: 760px) {
+  body.future table.layout > tbody > tr { grid-template-columns: 1fr; }
+  body.future h1.rainbow { font-size: 34px; letter-spacing: 0.14em; }
+  body.future .chatform { flex-wrap: wrap; }
+}
+
+/* ---------- Hava durumu karti (2030) ---------- */
+body.future .weather {
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.22), rgba(0, 229, 255, 0.12));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  margin-top: 16px;
+  font-family: inherit;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: left;
+}
+body.future .weather-title {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+body.future .weather select {
+  width: 100%;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 6px 8px;
+  margin-bottom: 10px;
+  outline: none;
+}
+body.future .weather select option { background: #14142a; color: #fff; }
+body.future .weather .w-icon { font-size: 34px; line-height: 1; white-space: normal; color: inherit; }
+body.future .weather .w-temp { font-size: 34px; font-weight: 700; color: var(--text); margin-top: 4px; }
+body.future .weather .w-desc { color: var(--accent2); font-size: 13px; margin-bottom: 8px; }
+body.future .weather .w-meta { color: var(--muted); line-height: 1.6; }

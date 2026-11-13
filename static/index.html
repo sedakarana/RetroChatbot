@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>RetroBot 95 - Hos Geldiniz!!!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/future.css">
+</head>
+<body>
+
+<!-- Zaman makinesi butonu -->
+<div class="topbar">
+  <button type="button" id="modeBtn" class="mode-btn">
+    <span class="r">&gt;&gt; MODERNLESTIR &lt;&lt;</span>
+    <span class="f">&#8634; Retro'ya Don</span>
+  </button>
+</div>
+
+<center class="header">
+  <h1 class="rainbow">
+    <span class="r">*~ RetroBot 95 ~*</span>
+    <span class="f">NEXUS 2030</span>
+  </h1>
+  <marquee behavior="scroll" direction="left" scrollamount="5" class="marquee r">
+    &gt;&gt;&gt; Hos geldiniz sevgili ziyaretci! Bu sayfa Netscape Navigator 3.0 ve 800x600 cozunurluk icin en iyi sekilde gorunur! &lt;&lt;&lt;
+  </marquee>
+  <p class="tagline f">Gelecek, sohbetin hemen bir adim otesinde.</p>
+  <hr class="r">
+</center>
+
+<table class="layout" width="100%" cellpadding="6" cellspacing="0" border="0">
+  <tr valign="top">
+
+    <!-- SOL MENU -->
+    <td class="menu" width="170">
+      <b><span class="r">:: MENU ::</span><span class="f">Gezinti</span></b><br><br>
+      <a href="#"><span class="r">Ana Sayfa</span><span class="f">Panel</span></a><br>
+      <a href="#"><span class="r">Hakkimda</span><span class="f">Profil</span></a><br>
+      <a href="#"><span class="r">Ziyaretci Defteri</span><span class="f">Topluluk</span></a><br>
+      <a href="#"><span class="r">Linkler</span><span class="f">Baglantilar</span></a><br>
+      <a href="#"><span class="r">Gif Galerisi</span><span class="f">Hologram Galeri</span></a><br>
+      <a href="#"><span class="r">Bana Yazin!</span><span class="f">Iletisim</span></a><br>
+      <br>
+      <div class="weather" id="weather">
+        <div class="weather-title">
+          <span class="r">:: HAVA DURUMU ::</span><span class="f">Hava durumu</span>
+        </div>
+        <select id="city" aria-label="Sehir">
+          <option value="istanbul">Istanbul</option>
+          <option value="ankara">Ankara</option>
+          <option value="izmir">Izmir</option>
+          <option value="antalya">Antalya</option>
+          <option value="bursa">Bursa</option>
+          <option value="trabzon">Trabzon</option>
+        </select>
+        <div class="weather-body" id="weatherBody">Yukleniyor...</div>
+      </div>
+      <br>
+      <div class="construction r">
+        <span class="blink">!!</span> YAPIM ASAMASINDA <span class="blink">!!</span>
+      </div>
+      <br>
+      <div class="counter-box">
+        <span class="r">Siz <b>bu sayfanin</b><br></span>
+        <span class="counter" id="counter">000000</span><br>
+        <span class="r">ziyaretcisisiniz!</span>
+        <span class="f">toplam senkron oturum</span>
+      </div>
+      <br>
+      <small class="r">
+        En iyi Netscape<br>ile gorunur<br>
+        <span class="badge">Netscape Now!</span>
+      </small>
+      <small class="f status-pill"><span class="dot"></span> Cevrimici &middot; 2030</small>
+    </td>
+
+    <!-- ORTA: SOHBET -->
+    <td class="main">
+      <h2>
+        <span class="r">Benimle Sohbet Edin! <span class="blink">NEW!</span></span>
+        <span class="f">Benimle konus</span>
+      </h2>
+      <p>
+        <span class="r">
+          Ben <b>RetroBot 95</b>, internetin en yeni sohbet programiyim.
+          Bana istediginizi sorun! (Modem bagliyken kontor harcamayin!)
+        </span>
+        <span class="f">
+          Ben <b>NEXUS</b>, 2030'un kisisel yapay zeka asistaniyim.
+          Aklina takilan her seyi sor.
+        </span>
+      </p>
+
+      <div id="chat" class="chatbox"></div>
+
+      <form id="form" class="chatform" autocomplete="off">
+        <b class="r">Mesajiniz:</b><br class="r">
+        <input type="text" id="input" size="40" maxlength="2000" placeholder="Bir seyler yazin...">
+        <input type="submit" id="send" value="Gonder">
+        <input type="button" id="clear" value="Temizle">
+      </form>
+
+      <p id="status" class="status">Baglanti hazir. 28.8 Kbps</p>
+    </td>
+
+  </tr>
+</table>
+
+<hr class="r">
+<center class="footer">
+  <small class="r">
+    Telif Hakki (c) 1996 RetroBot 95. Tum haklari saklidir.<br>
+    Son guncelleme: 13 Kasim 1996 &middot;
+    <a href="#">webmaster@retrobot95.com.tr</a>
+  </small>
+  <small class="f">&copy; 2030 NEXUS Labs &middot; Kuantum sifreli baglanti</small>
+</center>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
